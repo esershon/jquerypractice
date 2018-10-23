@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang=en>
+    <head>
+        <meta charset="UTF-8">
+        <title>JQuery Practice</title>
+        <link rel="stylesheet" type="text/css" href="normalise.css">
+        <link rel="stylesheet" type="text/css" href="styles.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        <script>
+        $(document).ready (function(){
+
+            // console.log("you made it!");
+            $("#hide button").click(function(){
+                $("#hide p").hide();
+            })
+            $("#show p").hide();
+            $("#show button").click(function(){
+                $("#show p").show();
+            })
+            $("#toggle button").click(function(){
+                $("#toggle p").toggle();
+            })
+            $("#slideDown p").hide();
+            $("#slideDown button").click(function(){
+                $("#slideDown p").slideDown( "slow", function() {
+                    $("#slideDown p").show();
+                }); 
+            })
+            $("#slideUp button").click(function(){
+                $("#slideUp p").slideUp("fast", function() {
+                    console.log("in here too");
+                    $("#slideUp p").hide();
+                });
+            })
+            $("#slideToggle button").click(function(){
+                $("#slideToggle p").slideToggle();
+            })
+            $("#fadeIn p").hide();
+            $("#fadeIn button").click(function(){
+                $("#fadeIn p").fadeIn();
+            })
+
+            $("#fadeOut button").click(function(){
+                $("#fadeOut p").fadeOut("slow", function(){
+                    console.log("in here");
+                    $("#fadeOut").show();
+                });
+            })
+            $("#addClass button").click(function(){
+                $("#addClass p").addClass("red");
+            })
+            $("#before button").click(function(){
+                $("#before p").before("Hello");
+            })
+            $("#after button").click(function(){
+                $("#after p").after("Hello");
+            })
+            $("#append button").click(function(){
+                $("#append p").append("Isn't that Cool!");
+            })
+            $("#html button").click(function(){
+                $("#html p").html("<h2>WOOHOOO</h2>");
+            })
+            $("#attr button").click(function(){
+                $("#attr p").attr({
+                    title : "wedidit"
+                });
+                
+                // console.log("attr works this far")
+            })
+           $("#val button").click(function(){
+            var value = $("#val input").val()
+            console.log( "the value is " + value)
+            })
+            $("#text button").click(function(){
+                $("#text p").text("<h2>WOOHOOO</h2>");
+            })
+        })
+        </script>
+    </head>
+    <body>
+        <div id="hide"> 
+            <button>.hide</button>
+            <h1>Hide Something</h1>
+            <p>The .hide method hides something. Used with the .click event listener, it will hide when you click! </p>
+        </div>
+        <div id="show"> 
+            <button>.show</button>
+            <h1>Show Something</h1>
+            <p>The .show method shows something. Used with the .click event listener, it will show something when you click! </p>
+        </div>
+        <div id="toggle"> 
+            <button>.toggle</button>
+            <h1>Toggle</h1>
+            <p>The .hide method hides something. Used with the .click event listener, it will hied what you click on! </p>
+        </div>
+        <div id="slideDown"> 
+            <button>Slide DOWN!!!!!</button>
+            <h1>Slide Down</h1>
+            <p>The slideDown method takes two parameters, one is the speed, and one is an anonymous function of what the method should do once the animation is complete </p>
+        </div>
+        <div id="slideUp"> 
+            <button>.slide up</button>
+            <h1>slide up</h1>
+            <p>The .template method template  something. Used with the .click event listener, it will hied what you click on! </p>
+        </div>
+        <div id="slideToggle"> 
+            <button>.slide toggle</button>
+            <h1>Slide Toggle</h1>
+            <p>The .template method template  something. Used with the .click event listener, it will hied what you click on! </p>
+        </div>
+        <div id="fadeIn"> 
+            <button>FADE IN</button>
+            <h1>FADE IN</h1>
+            <p>The .template method template  something. Used with the .click event listener, it will hied what you click on! </p>
+        </div>
+        <div id="fadeOut"> 
+            <button>FADE OUT</button>
+            <h1>FADE OUT</h1>
+            <p>The .template method template  something. Used with the .click event listener, it will hied what you click on! </p>
+        </div>
+        <div id="addClass"> 
+            <button> ADD CLASS</button>
+            <h1>add class</h1>
+            <p>The .template method template  something. Used with the .click event listener, it will hied what you click on! </p>
+        </div>
+        <div id="before"> 
+            <button> BEFORE</button>
+            <h1>add somethign before</h1>
+            <p>The .template method template  something. Used with the .click event listener, it will hied what you click on! </p>
+        </div>
+        <div id="after"> 
+            <button> AFTER</button>
+            <h1>add something after</h1>
+            <p>The .template method template  something. Used with the .click event listener, it will hied what you click on! </p>
+        </div> 
+        <div id="append"> 
+            <button> APPEND</button>
+            <h1>append something</h1>
+            <p>The .template method template  something. Used with the .click event listener, it will hied what you click on! </p>
+        </div>
+        <div id="html"> 
+            <button> HTML</button>
+            <h1>append something</h1>
+            <p>The entire html of th this p tag will get replaces with an h2 tag</p>
+        </div>
+        <div id="attr"> 
+            <button> ATTR</button>
+            <h1>attribute</h1>
+            <p title = "first" class = "orange" >The entire html of th this p tag will get replaces with an h2 tag</p>
+            <!-- <p class = "yellow">here's the second one</p>
+            <p class = "green">here's the third one</p> -->
+        </div>
+        <div id="val"> 
+            <button> VAL</button>
+            <h1>append something</h1>
+            <input type = "text">
+            <p>The entire html of th this p tag will get replaces with an h2 tag</p>
+        </div>
+        <div id="text"> 
+            <button> TEXT</button>
+            <h1>text stuff</h1>
+            <p>The entire html of th this p tag will get replaces with an h2 tag</p>
+        </div>
+        
+    </body>
+</html>
